@@ -9,7 +9,7 @@ class t_events //t_list_of_events_and_functions
 
     add_event_uab(event_name, listener) //add_event("click",f1) add_event("draw",g1) add_event("click",f2)
     {
-        if(this.events.lenght == 0)
+        if(this.events.length == 0)
         {
             this.events.push(event_name);
             this.events[event_name] = []; //cream o lista goala atasata unui eveniment...lista de functii( adica la on_click pentru f1, f2..)
