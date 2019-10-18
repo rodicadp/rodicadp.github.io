@@ -4,7 +4,7 @@ class t_ec2_view
     events_list;
     constructor()
     {
-        document.getElementById("id_solve").addEventListener("click", this.on_button_pressed);
+        document.getElementById("id_solve").addEventListener("click", this.on_button_pressed.bind(this)); //bind=fortez sa se lege de this-ul curent
     }
 
     set_events(events) //setam lista de functii
@@ -31,7 +31,7 @@ class t_ec2_view
     {
         return document.getElementById("id_c").value;
     }
-    get_solutions(x1_re, x1_im, x2_re, x2_im)
+    set_solutions(x1_re, x1_im, x2_re, x2_im)
     {
         document.getElementById("id_x1").innerHTML = x1_re + "+" + x1_im + "i";
         document.getElementById("id_x2").innerHTML = x2_re + "+" + x2_im + "i";
