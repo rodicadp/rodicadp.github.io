@@ -3,7 +3,7 @@ document.getElementById("id_logic_version").innerHTML = "Logic version = 2019.10
 window.addEventListener("deviceorientation", on_orientation_uab);
 window.addEventListener("devicemotion", on_motion_uab);
 
-function on_rotate_uab(e)
+function on_orientation_uab(e)
 {
 	document.getElementById("id_alpha").innerHTML = e.alpha;
 	document.getElementById("id_beta").innerHTML = e.beta;
