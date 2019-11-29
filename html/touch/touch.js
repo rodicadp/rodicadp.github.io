@@ -1,7 +1,7 @@
 document.getElementById("id_logic_version").innerHTML = "2019.11.29.5";
 
-window.addEventListener("touchstart", touch_start_uab);
-window.addEventListener("touchmove", touch_move_uab);
+window.addEventListener("touchstart", touch_start_uab, {passive:flase} );
+window.addEventListener("touchmove", touch_move_uab, {passive:flase});
 
 var canvas = document.getElementById("id_canvas");
 var context = canvas.getContext("2d");
