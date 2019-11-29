@@ -1,4 +1,4 @@
-document.getElementById("id_logic_version").innerHTML = "2019.11.29.4";
+document.getElementById("id_logic_version").innerHTML = "2019.11.29.5";
 
 window.addEventListener("touchstart", touch_start_uab);
 window.addEventListener("touchmove", touch_move_uab);
@@ -22,6 +22,9 @@ function get_random_color()
 
 function touch_start_uab(e)
 {
+
+    e.preventDefault();
+
     var t = e.changedTouches;
     for (var i = 0; i < t.length; i++)
     {
@@ -44,13 +47,15 @@ function touch_start_uab(e)
 
 function touch_move_uab(e)
 {
+
+    e.preventDefault();
     var t = e.changedTouches;
     for (var i = 0; i < t.length; i++)
     {
         var touch_index = -1;
         for (var j = 0; j < last_touch.length; j++)
         {
-            if (t[i].identifier == last_touch[j].identifier)
+            if (t[i].identifier == last_touch[j].id)
             {
                 touch_index = j;
                 break;
@@ -62,6 +67,10 @@ function touch_move_uab(e)
         context.lineWidth = 20;
         context.strokeStyle = last_touch[touch_index].color;
         context.fillStyle = last_touch[touch_index].color;
+        context.fill();
         context.stroke();
+
+        last_touch[touch_index].x = t[i].x;
+        last_touch[touch_index].y = t[i].y;
     }
 }
