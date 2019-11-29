@@ -9,7 +9,7 @@ var client_rect = canvas.getBoundingClientRect();
 
 function get_random_color()
 {
-    vat tmp = "0123456789ABCDEF";
+    var tmp = "0123456789ABCDEF";
     var culoare = "#";
     for (var i = 0; i < 6; i++)
         culoare += tmp[Math.floor(Math.random() * 16)];
